@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pelos &amp; Patas: banho e tosa com cuidado individualizado, carinho e bem-estar para seu pet em Osasco. Conheça nossos serviços e agende um horário.">
+
+  <title>Pelos &amp; Patas | Banho, Tosa e Muito Carinho</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+  <style>
+    /*
+      Pelos & Patas
+      Categoria 2: Comércio eletrônico e conversão.
+      Referência de design: Nike.
+      Identidade preservada: Nunito, azul, laranja e fotos originais.
+      Imagens armazenadas na pasta assets/.
+    */
+
+    :root {
+      --laranja: #fb6d0d;
+      --azul: #025590;
+      --azul-escuro: #063b61;
+      --cinza-texto: #4e5c69;
+      --cinza-claro: #f4f6f8;
+      --branco: #ffffff;
+      --creme: #fff8f2;
+      --pessego: #ffe1ce;
+      --verde-sucesso: #286c32;
+      --sombra: 0 12px 32px rgb(6 59 97 / 7%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 180px;
+    }
+
+    body {
+      font-family: "Nunito", Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--azul-escuro);
+      background: var(--branco);
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    :focus-visible {
+      outline: 3px solid #b94b00;
+      outline-offset: 5px;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 100;
+      transform: translateY(-160%);
+      background: var(--branco);
+      color: var(--azul);
+      padding: 12px 20px;
+      border-radius: 8px;
+    }
+
+    .skip-link:focus {
+      transform: none;
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+      vertical-align: middle;
+    }
+
+    .icon-small {
+      width: 18px;
+      height: 18px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 1.12;
+    }
+
+    .eyebrow {
+      display: block;
+      color: #a84300;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 3.6vw, 48px);
+      max-width: 760px;
+      text-wrap: balance;
+    }
+
+    .section-title .icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 6px;
+    }
+
+    .section-desc {
+      font-size: 18px;
+      color: var(--cinza-texto);
+      line-height: 1.65;
+      max-width: 620px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .section-head > div {
+      display: grid;
+      gap: 13px;
+    }
+
+    /* BOTÕES */
+
+    .btn,
+    .hero-novo-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 2px solid transparent;
+      border-radius: 999px;
+      min-height: 52px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.3;
+      text-align: center;
+      transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.2s;
+    }
+
+    .btn-azul,
+    .hero-novo-primario {
+      background: var(--azul);
+      color: var(--branco);
+    }
+
+    .btn-azul:hover,
+    .hero-novo-primario:hover {
+      background: var(--azul-escuro);
+      transform: translateY(-2px);
+    }
+
+    .btn-laranja {
+      background: var(--laranja);
+      color: #192f40;
+    }
+
+    .btn-laranja:hover {
+      background: #ffb278;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline,
+    .hero-novo-secundario {
+      border-color: var(--azul);
+      color: var(--azul);
+      background: transparent;
+    }
+
+    .btn-outline:hover,
+    .hero-novo-secundario:hover {
+      background: var(--azul);
+      color: var(--branco);
+    }
+
+    .btn-branco {
+      background: var(--branco);
+      color: var(--azul);
+    }
+
+    /* CABEÇALHO */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--azul);
+    }
+
+    .top-bar {
+      background: var(--azul);
+    }
+
+    .top-inner {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo img {
+      width: 114px;
+      height: 78px;
+      object-fit: contain;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .header-location {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--branco);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sub-nav {
+      background: var(--branco);
+      border-bottom: 1px solid #dbe5ed;
+    }
+
+    .sub-nav .container {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(16px, 2.8vw, 42px);
+    }
+
+    .sub-nav a {
+      font-size: 15px;
+      font-weight: 800;
+      white-space: nowrap;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      border-bottom: 3px solid transparent;
+      padding-top: 3px;
+    }
+
+    .sub-nav a:hover,
+    .sub-nav a.active {
+      color: var(--azul);
+      border-bottom-color: var(--laranja);
+    }
+
+    /* BANNER PRINCIPAL */
+
+    .hero-novo {
+      background: var(--creme);
+      overflow: hidden;
+    }
+
+    .hero-novo-container {
+      width: min(1160px, calc(100% - 48px));
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 32px;
+      align-items: center;
+      min-height: 540px;
+    }
+
+    .hero-novo-texto {
+      padding: 58px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-novo-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 900;
+      color: #a84300;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero-novo-texto h1 {
+      font-size: clamp(43px, 5.2vw, 68px);
+      line-height: 1.04;
+      max-width: 600px;
+      margin-bottom: 22px;
+      text-wrap: balance;
+    }
+
+    .hero-novo-texto h1 span {
+      display: block;
+      color: var(--azul);
+    }
+
+    .hero-description {
+      max-width: 460px;
+      font-size: 18px;
+      color: var(--cinza-texto);
+      line-height: 1.7;
+    }
+
+    .hero-novo-botoes {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .hero-caption {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 800;
+      margin-top: 21px;
+      color: var(--azul);
+    }
+
+    .hero-visual {
+      position: relative;
+      align-self: stretch;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      aspect-ratio: 1;
+      max-height: 430px;
+      background: #ffe0c5;
+      border-radius: 50% 50% 38% 42%;
+      bottom: 28px;
+      left: 0;
+    }
+
+    .hero-novo-dona {
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-height: 495px;
+      object-fit: contain;
+      object-position: center bottom;
+      z-index: 1;
+    }
+
+    .hero-photo-label {
+      position: absolute;
+      z-index: 2;
+      bottom: 24px;
+      left: 10px;
+      background: var(--branco);
+      color: var(--azul-escuro);
+      border: 1px solid #e6d4c4;
+      border-radius: 16px;
+      padding: 13px 18px;
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: var(--sombra);
+    }
+
+    .hero-photo-label small {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cinza-texto);
+    }
+
+    /* DIFERENCIAIS */
+
+    .care-strip {
+      background: var(--azul-escuro);
+      color: var(--branco);
+    }
+
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      padding-block: 26px;
+    }
+
+    .care-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 0 20px;
+    }
+
+    .care-item + .care-item {
+      border-left: 1px solid #456c87;
+    }
+
+    .care-item .icon {
+      color: #ffb985;
+      width: 28px;
+      height: 28px;
+    }
+
+    .care-item strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .care-item span {
+      display: block;
+      font-size: 13px;
+      color: #d8e7f2;
+    }
+
+    /* SERVIÇOS */
+
+    .services {
+      padding: 88px 0;
+      background: var(--branco);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      border: 1px solid #cfdae2;
+      border-radius: 22px;
+      padding: 30px;
+      background: var(--branco);
+      position: relative;
+      transition:
+        transform 0.22s,
+        box-shadow 0.22s,
+        background 0.22s;
+    }
+
+    .service-card.featured {
+      background: var(--creme);
+      border: 2px solid var(--laranja);
+      padding: 29px;
+    }
+
+    .service-label {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 13px;
+      background: var(--pessego);
+      color: #893500;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.7px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .service-card:not(.featured) .service-label {
+      background: #edf4f9;
+      color: var(--azul);
+    }
+
+    .service-card h3 {
+      font-size: 27px;
+      margin-bottom: 16px;
+    }
+
+    .service-card p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--cinza-texto);
+      flex: 1;
+    }
+
+    .price-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 8px;
+      margin: 24px 0 18px;
+    }
+
+    .price {
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      white-space: nowrap;
+    }
+
+    .old-price {
+      font-size: 14px;
+      text-decoration: line-through;
+      color: var(--cinza-texto);
+    }
+
+    .featured .price-row {
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 9px;
+    }
+
+    .saving {
+      color: var(--verde-sucesso);
+      font-size: 14px;
+      font-weight: 900;
+      display: block;
+      margin-bottom: 17px;
+    }
+
+    .service-card .btn {
+      width: 100%;
+      margin-top: auto;
+      font-size: 15px;
+      padding: 12px 14px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .service-card:hover {
+        background: var(--azul);
+        color: var(--branco);
+        transform: translateY(-5px);
+        box-shadow: 0 18px 35px #02559022;
+        border-color: var(--azul);
+      }
+
+      .service-card:hover p,
+      .service-card:hover .price,
+      .service-card:hover .old-price,
+      .service-card:hover .saving {
+        color: var(--branco);
+      }
+
+      .service-card:hover .btn {
+        background: var(--branco);
+        color: var(--azul);
+        border-color: var(--branco);
+      }
+    }
+
+    .service-card:focus-within {
+      box-shadow: 0 0 0 3px #02559030;
+    }
+
+    /*
+      GALERIA
+      Proporção original das imagens: 3:4.
+      Fotos inteiras, sem zoom e com legendas abaixo.
+    */
+
+    .gallery {
+      background: var(--creme);
+      padding: 88px 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px 22px;
+    }
+
+    .gallery-item {
+      min-width: 0;
+      background: var(--branco);
+      border: 1px solid #e7ddd3;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      object-position: center;
+      background: #ece9e4;
+    }
+
+    .gallery-item figcaption {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 62px;
+      padding: 16px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .gallery-item figcaption .icon {
+      color: #a84300;
+    }
+
+    .gallery-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 34px;
+    }
+
+    /* AVALIAÇÕES */
+
+    .reviews {
+      padding: 88px 0;
+      background: var(--branco);
+    }
+
+    .reviews-heading {
+      max-width: 760px;
+      text-align: center;
+      margin: 0 auto 36px;
+    }
+
+    .reviews-heading .eyebrow {
+      margin-bottom: 13px;
+    }
+
+    .reviews-heading p {
+      color: var(--cinza-texto);
+      font-size: 18px;
+      margin-top: 16px;
+    }
+
+    .reviews-carousel {
+      position: relative;
+      padding-inline: 58px;
+    }
+
+    .reviews-window {
+      overflow: hidden;
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 5px 0 14px;
+    }
+
+    .reviews-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .review-card {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 calc((100% - 20px) / 2);
+      scroll-snap-align: start;
+      min-width: 0;
+      border: 1px solid #dce5ec;
+      border-radius: 20px;
+      padding: 28px;
+      background: #f8fafc;
+    }
+
+    .review-stars {
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: #a84300;
+      margin-bottom: 14px;
+    }
+
+    .review-quote {
+      font-size: 18px;
+      color: #40505f;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .review-person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 15px;
+      font-weight: 900;
+      background: #ffe5d1;
+    }
+
+    .review-person strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 900;
+    }
+
+    .review-person small {
+      display: block;
+      font-size: 12px;
+      color: var(--cinza-texto);
+    }
+
+    .reviews-arrow {
+      position: absolute;
+      top: 44%;
+      width: 42px;
+      height: 42px;
+      border: 1px solid #b8cad7;
+      border-radius: 50%;
+      background: var(--branco);
+      color: var(--azul);
+      display: grid;
+      place-items: center;
+      font-size: 29px;
+      line-height: 1;
+    }
+
+    .reviews-arrow:hover:not(:disabled) {
+      background: var(--azul);
+      color: var(--branco);
+    }
+
+    .reviews-arrow:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .reviews-prev {
+      left: 0;
+    }
+
+    .reviews-next {
+      right: 0;
+    }
+
+    .reviews-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .reviews-dot {
+      width: 28px;
+      height: 28px;
+      border: 0;
+      background: transparent;
+      position: relative;
+    }
+
+    .reviews-dot::after {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #aabac6;
+    }
+
+    .reviews-dot[aria-current="true"]::after {
+      background: var(--azul);
+    }
+
+    /* CHAMADA FINAL */
+
+    .booking {
+      background: var(--pessego);
+      padding: 46px 0;
+    }
+
+    .booking-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .booking h2 {
+      font-size: clamp(30px, 3.3vw, 42px);
+      margin-bottom: 10px;
+    }
+
+    .booking p {
+      color: #4c5053;
+      max-width: 560px;
+    }
+
+    .booking .btn {
+      flex-shrink: 0;
+    }
+
+    /* RODAPÉ */
+
+    .site-footer {
+      background: var(--azul-escuro);
+      color: var(--branco);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.7fr 1.2fr;
+      gap: 40px;
+      padding: 58px 0;
+    }
+
+    .footer-logo {
+      width: 170px;
+      height: auto;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: #d4e3ed;
+      max-width: 250px;
+      margin-top: 18px;
+    }
+
+    .footer-grid h3 {
+      font-size: 16px;
+      letter-spacing: 0;
+      color: #ffb985;
+      margin-bottom: 16px;
+    }
+
+    .footer-grid ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .footer-grid a {
+      font-size: 14px;
+    }
+
+    .footer-grid a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer-contact-card {
+      border: 1px solid #4b7089;
+      padding: 24px;
+      border-radius: 18px;
+    }
+
+    .footer-contact-item + .footer-contact-item {
+      margin-top: 20px;
+    }
+
+    .footer-contact-item h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .footer-contact-item p {
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    .footer-contact-item a {
+      font: inherit;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer-bottom {
+      background: var(--azul);
+      color: var(--branco);
+      text-align: center;
+      font-size: 12px;
+      padding: 16px 20px;
+    }
+
+    /* RESPONSIVIDADE */
+
+    @media (max-width: 1000px) {
+      .hero-novo-container {
+        min-height: 470px;
+        gap: 16px;
+      }
+
+      .hero-novo-texto h1 {
+        font-size: clamp(38px, 5.5vw, 55px);
+      }
+
+      .hero-novo-btn {
+        font-size: 14px;
+        padding: 12px 18px;
+      }
+
+      .service-card,
+      .service-card.featured {
+        padding: 23px;
+      }
+
+      .service-card h3 {
+        font-size: 23px;
+      }
+
+      .price {
+        font-size: 34px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .footer-contact-card {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 700px) {
+      html {
+        scroll-padding-top: 155px;
+      }
+
+      .container,
+      .hero-novo-container {
+        width: calc(100% - 36px);
+      }
+
+      .header-location {
+        display: none;
+      }
+
+      .top-inner {
+        min-height: 76px;
+        gap: 12px;
+      }
+
+      .logo img {
+        height: 65px;
+        width: 94px;
+      }
+
+      .header-actions .btn {
+        font-size: 13px;
+        min-height: 44px;
+        padding: 10px 15px;
+      }
+
+      .sub-nav .container {
+        width: 100%;
+        justify-content: start;
+        gap: 23px;
+        padding-inline: 18px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+      }
+
+      .sub-nav a {
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+
+      .hero-novo-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        min-height: 0;
+      }
+
+      .hero-novo-texto {
+        padding: 42px 0 14px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-novo-tag {
+        justify-content: center;
+        font-size: 11px;
+        margin-bottom: 19px;
+      }
+
+      .hero-novo-texto h1 {
+        font-size: clamp(37px, 8.7vw, 55px);
+        margin-inline: auto;
+        max-width: 540px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+        margin-inline: auto;
+        max-width: 420px;
+      }
+
+      .hero-novo-botoes {
+        justify-content: center;
+        gap: 10px;
+        margin-top: 23px;
+      }
+
+      .hero-caption {
+        justify-content: center;
+        font-size: 13px;
+      }
+
+      .hero-visual {
+        width: min(100%, 420px);
+        align-self: center;
+        margin-top: 12px;
+      }
+
+      .hero-novo-dona {
+        max-height: 330px;
+      }
+
+      .hero-visual::before {
+        bottom: 15px;
+        max-height: 280px;
+      }
+
+      .hero-photo-label {
+        bottom: 15px;
+        left: 0;
+        font-size: 12px;
+        padding: 10px 14px;
+      }
+
+      .hero-photo-label small {
+        font-size: 11px;
+      }
+
+      .care-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding-block: 25px;
+      }
+
+      .care-item {
+        justify-content: start;
+        padding: 0;
+        max-width: 300px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .care-item + .care-item {
+        border-left: 0;
+      }
+
+      .services,
+      .gallery,
+      .reviews {
+        padding: 55px 0;
+      }
+
+      .section-head {
+        align-items: start;
+        margin-bottom: 28px;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .section-desc {
+        font-size: 16px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: auto;
+      }
+
+      .service-card,
+      .service-card.featured {
+        padding: 26px;
+      }
+
+      .service-card h3 {
+        font-size: 27px;
+      }
+
+      .price {
+        font-size: 38px;
+      }
+
+      .service-card p {
+        flex: initial;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .gallery-item {
+        border-radius: 13px;
+      }
+
+      .gallery-item figcaption {
+        font-size: 13px;
+        min-height: 66px;
+        padding: 11px;
+        gap: 6px;
+      }
+
+      .gallery-item figcaption .icon {
+        width: 16px;
+        height: 16px;
+      }
+
+      .reviews-carousel {
+        padding-inline: 0;
+        padding-bottom: 53px;
+      }
+
+      .review-card {
+        flex-basis: 100%;
+        padding: 24px;
+      }
+
+      .reviews-heading p {
+        font-size: 16px;
+      }
+
+      .review-quote {
+        font-size: 17px;
+      }
+
+      .reviews-arrow {
+        top: auto;
+        bottom: 0;
+        width: 42px;
+        height: 42px;
+      }
+
+      .reviews-prev {
+        left: 0;
+      }
+
+      .reviews-next {
+        right: 0;
+      }
+
+      .reviews-dots {
+        position: absolute;
+        bottom: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 0;
+        margin: 0;
+      }
+
+      .booking-inner {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+        padding: 42px 0;
+      }
+
+      .footer-logo {
+        width: 140px;
+      }
+
+      .footer-contact-card {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-novo-botoes {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-novo-btn {
+        width: 100%;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item figcaption {
+        font-size: 16px;
+        min-height: 58px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-contact-card {
+        grid-column: auto;
+      }
+
+      .hero-novo-texto h1 {
+        font-size: 37px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html,
+      .reviews-track {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .btn:hover,
+      .hero-novo-primario:hover,
+      .service-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ÍCONES SVG -->
+  <svg
+    aria-hidden="true"
+    width="0"
+    height="0"
+    style="position:absolute;overflow:hidden"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <symbol id="icon-paw" viewBox="0 0 24 24">
+      <circle cx="5" cy="9" r="1"></circle>
+      <circle cx="9" cy="5" r="1"></circle>
+      <circle cx="15" cy="5" r="1"></circle>
+      <circle cx="19" cy="9" r="1"></circle>
+      <path d="M12 12c-2.5 0-3.2 2.1-5.1 3.5-1.4 1-2 2.2-1.1 3.6.9 1.4 2.6 1.1 4.2.6 1.3-.4 2.1-.4 3.7 0 1.6.5 3.3.8 4.2-.6.9-1.4.3-2.6-1.1-3.6C15.2 14.1 14.5 12 12 12z"></path>
+    </symbol>
+
+    <symbol id="icon-heart" viewBox="0 0 24 24">
+      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"></path>
+    </symbol>
+
+    <symbol id="icon-bath" viewBox="0 0 24 24">
+      <path d="M3 12h18l-1 5a4 4 0 0 1-4 3H8a4 4 0 0 1-4-3z"></path>
+      <path d="M6 12V6a3 3 0 0 1 6 0M4 21v-1M20 21v-1"></path>
+    </symbol>
+
+    <symbol id="icon-sparkles" viewBox="0 0 24 24">
+      <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path>
+      <path d="m19 17 .7 2.3L22 20l-2.3.7L19 23l-.7-2.3L16 20l2.3-.7zM4 3l.6 1.4L6 5l-1.4.6L4 7l-.6-1.4L2 5l1.4-.6z"></path>
+    </symbol>
+
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+      <path d="M7 3v4M17 3v4M3 10h18m5 5 2 2 5-5"></path>
+    </symbol>
+
+    <symbol id="icon-map-pin" viewBox="0 0 24 24">
+      <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"></path>
+      <circle cx="12" cy="10" r="2.5"></circle>
+    </symbol>
+
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.6 19.6 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7.1 10a16 16 0 0 0 6.9 6.9l1.5-1.9a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.7 2z"></path>
+    </symbol>
+
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="m4 12 5 5L20 6"></path>
+    </symbol>
+  </svg>
+
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-inner">
+        <a
+          class="logo"
+          href="#inicio"
+          aria-label="Pelos &amp; Patas - Início"
+        >
+          <img
+            src="assets/logo.png"
+            width="320"
+            height="222"
+            alt="Pelos &amp; Patas - Estética Animal"
+          >
+        </a>
+
+        <div class="header-actions">
+          <span class="header-location">
+            <svg class="icon icon-small" aria-hidden="true">
+              <use href="#icon-map-pin"></use>
+            </svg>
+            Osasco · SP
+          </span>
+
+          <a
+            class="btn btn-laranja"
+            href="https://wa.me/5511978128470?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20para%20meu%20pet."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Agendar horário
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sub-nav" aria-label="Navegação principal">
+      <div class="container">
+        <a class="active" href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="quem-somos.html">Quem Somos?</a>
+        <a href="blog.html">Blog Pet</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- BANNER PRINCIPAL -->
+    <section
+      class="hero hero-novo"
+      id="inicio"
+      aria-label="Boas-vindas ao Pelos &amp; Patas"
+    >
+      <div class="hero-novo-container">
+        <div class="hero-novo-texto">
+          <div class="hero-novo-tag">
+            <svg class="icon icon-small" aria-hidden="true">
+              <use href="#icon-paw"></use>
+            </svg>
+            Banho e tosa em Osasco
+          </div>
+
+          <h1>
+            Seu pet merece carinho
+            <span>em cada detalhe.</span>
+          </h1>
+
+          <p class="hero-description">
+            Banho, cuidado e manejo gentil para o seu melhor amigo.
+            Um momento de carinho que começa no primeiro contato.
+          </p>
+
+          <div class="hero-novo-botoes">
+            <a
+              class="hero-novo-btn hero-novo-primario"
+              href="https://wa.me/5511978128470?text=Ol%C3%A1%21%20Quero%20agendar%20um%20banho%20para%20meu%20pet."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agendar pelo WhatsApp
+            </a>
+
+            <a
+              class="hero-novo-btn hero-novo-secundario"
+              href="#servicos"
+            >
+              Conhecer os serviços
+            </a>
+          </div>
+
+          <p class="hero-caption">
+            <svg class="icon icon-small" aria-hidden="true">
+              <use href="#icon-calendar"></use>
+            </svg>
+            Atendimento com hora marcada
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <img
+            class="hero-novo-dona"
+            src="assets/dona.png"
+            width="828"
+            height="651"
+            fetchpriority="high"
+            alt="Responsável pelo Pelos &amp; Patas ao lado de um cachorro branco"
+          >
+
+          <div class="hero-photo-label">
+            Quem ama cuida.
+            <small>E a gente cuida com carinho.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="care-strip" aria-label="Nosso jeito de cuidar">
+      <div class="container care-grid">
+        <div class="care-item">
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-heart"></use>
+          </svg>
+
+          <div>
+            <strong>Manejo gentil</strong>
+            <span>Carinho em cada cuidado.</span>
+          </div>
+        </div>
+
+        <div class="care-item">
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-paw"></use>
+          </svg>
+
+          <div>
+            <strong>Sem gaiolas</strong>
+            <span>Bem-estar em primeiro lugar.</span>
+          </div>
+        </div>
+
+        <div class="care-item">
+          <svg class="icon" aria-hidden="true">
+            <use href="#icon-sparkles"></use>
+          </svg>
+
+          <div>
+            <strong>Hydra Premium</strong>
+            <span>Produtos para o cuidado da pelagem.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="services" id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Nossos serviços</span>
+
+            <h2 class="section-title">
+              Um cuidado para cada momento
+            </h2>
+
+            <p class="section-desc">
+              Escolha o serviço ideal para o seu melhor amigo.
+              Aqui, bem-estar e carinho vêm em primeiro lugar.
+            </p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <span class="service-label">Cuidado avulso</span>
+
+            <h3>1 Banho Premium</h3>
+
+            <p>
+              Higienização completa, corte de unhas e limpeza das
+              orelhas para uma ocasião especial.
+            </p>
+
+            <div class="price-row">
+              <span class="price">R$ 70,00</span>
+            </div>
+
+            <a
+              class="btn btn-outline"
+              href="https://wa.me/5511978128470?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%201%20Banho%20Premium."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agendar Banho
+            </a>
+          </article>
+
+          <article class="service-card featured">
+            <span class="service-label featured-label">
+              Pacote em destaque
+            </span>
+
+            <h3>2 Banhos Premium</h3>
+
+            <p>
+              Manutenção quinzenal perfeita com hidratação leve
+              para manter a pelagem sempre macia.
+            </p>
+
+            <div class="price-row">
+              <span class="old-price">De R$ 140,00</span>
+              <span class="price">R$ 99,90</span>
+            </div>
+
+            <span class="saving">Economize R$ 40,10</span>
+
+            <a
+              class="btn btn-laranja"
+              href="https://wa.me/5511978128470?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20pacote%20de%202%20Banhos%20Premium."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agendar 2 banhos
+            </a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-label">Cuidado frequente</span>
+
+            <h3>3 Banhos Premium</h3>
+
+            <p>
+              Três momentos de cuidado para manter a pelagem limpa
+              e cheirosa na rotina do seu pet.
+            </p>
+
+            <div class="price-row">
+              <span class="price">R$ 180,00</span>
+            </div>
+
+            <a
+              class="btn btn-outline"
+              href="https://wa.me/5511978128470?text=Ol%C3%A1%21%20Quero%20saber%20mais%20sobre%203%20Banhos%20Premium."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agendar Plano
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section class="gallery" id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Galeria de fofuras</span>
+
+            <h2 class="section-title">
+              <svg class="icon" aria-hidden="true" focusable="false">
+                <use href="#icon-paw"></use>
+              </svg>
+              Nossos clientes de quatro patas
+            </h2>
+
+            <p class="section-desc">
+              Rostinhos de quem já passou por aqui. Fotos reais,
+              cuidado de verdade e muito charme depois do banho.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img
+              src="assets/cachorrinha-caramelo-laco-rosa.png"
+              width="750"
+              height="1000"
+              loading="lazy"
+              alt="Cachorrinha caramelo com laço rosa"
+            >
+
+            <figcaption>
+              <svg class="icon icon-small" aria-hidden="true" focusable="false">
+                <use href="#icon-heart"></use>
+              </svg>
+              Uma verdadeira princesa
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="assets/cachorrinho-branco-lacinho-roxo.png"
+              width="750"
+              height="1000"
+              loading="lazy"
+              alt="Cachorrinho branco com lacinho roxo"
+            >
+
+            <figcaption>
+              <svg class="icon icon-small" aria-hidden="true" focusable="false">
+                <use href="#icon-bath"></use>
+              </svg>
+              Banho de fofura
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="assets/cachorro-preto-branco-gravatinha.png"
+              width="750"
+              height="1000"
+              loading="lazy"
+              alt="Cachorro preto e branco com gravatinha"
+            >
+
+            <figcaption>
+              <svg class="icon icon-small" aria-hidden="true" focusable="false">
+                <use href="#icon-sparkles"></use>
+              </svg>
+              Pronto para brilhar
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="assets/cachorro-branco-caramelo-gravatinha.png"
+              width="750"
+              height="1000"
+              loading="lazy"
+              alt="Cachorro branco e caramelo com gravatinha"
+            >
+
+            <figcaption>
+              <svg class="icon icon-small" aria-hidden="true" focusable="false">
+                <use href="#icon-heart"></use>
+              </svg>
+              Muito charme!
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="assets/cachorrinho-preto-peludo-gravata-estampada.png"
+              width="750"
+              height="1000"
+              loading="lazy"
+              alt="Cachorrinho preto e peludo com gravata estampada"
+            >
+
+            <figcaption>
+              <svg class="icon icon-small" aria-hidden="true" focusable="false">
+                <use href="#icon-paw"></use>
+              </svg>
+              Estilo de sobra
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item">
+            <img
+              src="assets/cachorrinha-pelos-longos-lacos-laranja.png"
+              width="750"
+              height="1000"
+              loading="lazy"
+              alt="Cachorrinha de pelos longos com laços laranja"
+            >
+
+            <figcaption>
+              <svg class="icon icon-small" aria-hidden="true" focusable="false">
+                <use href="#icon-heart"></use>
+              </svg>
+              Um toque especial
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="gallery-actions">
+          <a
+            class="btn btn-azul"
+            href="https://www.instagram.com/pelosepatasbanhoetosaoficial/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver mais fotos no Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVALIAÇÕES -->
+    <section
+      class="reviews"
+      id="avaliacoes"
+      aria-label="Avaliações de clientes"
+    >
+      <div class="container">
+        <div class="reviews-heading">
+          <span class="eyebrow">Avaliações dos clientes</span>
+
+          <h2 class="section-title">
+            O carinho de quem confia na gente
+          </h2>
+
+          <p>
+            Veja o que nossos clientes dizem sobre o Pelos &amp; Patas.
+          </p>
+        </div>
+
+        <div
+          class="reviews-carousel"
+          aria-label="Depoimentos de clientes"
+          aria-roledescription="carrossel"
+        >
+          <button
+            class="reviews-arrow reviews-prev"
+            type="button"
+            aria-label="Avaliações anteriores"
+          >
+            ‹
+          </button>
+
+          <div class="reviews-window">
+            <div
+              class="reviews-track"
+              id="reviewsTrack"
+              tabindex="0"
+              aria-label="Deslize para conhecer mais avaliações"
+            >
+              <article class="review-card">
+                <div
+                  class="review-stars"
+                  role="img"
+                  aria-label="5 de 5 estrelas"
+                >
+                  ★★★★★
+                </div>
+
+                <p class="review-quote">
+                  “Atendimento muito bom, ótimos profissionais e
+                  carinhosos com os animais.”
+                </p>
+
+                <div class="review-person">
+                  <div class="review-avatar" aria-hidden="true">NC</div>
+
+                  <div>
+                    <strong>Nad Correa</strong>
+                    <small>Avaliação de cliente • 5 estrelas</small>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div
+                  class="review-stars"
+                  role="img"
+                  aria-label="5 de 5 estrelas"
+                >
+                  ★★★★★
+                </div>
+
+                <p class="review-quote">
+                  “Simplesmente sensacional”
+                </p>
+
+                <div class="review-person">
+                  <div class="review-avatar" aria-hidden="true">PA</div>
+
+                  <div>
+                    <strong>Priscila Almeida</strong>
+                    <small>Avaliação de cliente • 5 estrelas</small>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div
+                  class="review-stars"
+                  role="img"
+                  aria-label="5 de 5 estrelas"
+                >
+                  ★★★★★
+                </div>
+
+                <p class="review-quote">
+                  “Otimo serviço e local! O meu cão voltou super
+                  cheiroso, animado e arrumadinho, vestindo gravata”
+                </p>
+
+                <div class="review-person">
+                  <div class="review-avatar" aria-hidden="true">GM</div>
+
+                  <div>
+                    <strong>Gustavo Macias Corrêa</strong>
+                    <small>Avaliação de cliente • 5 estrelas</small>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div
+                  class="review-stars"
+                  role="img"
+                  aria-label="5 de 5 estrelas"
+                >
+                  ★★★★★
+                </div>
+
+                <p class="review-quote">
+                  “Um ótimo ambiente, com tia Andrea super atenciosa
+                  com as minhas 2 filhotes pet. Parabéns tia Andrea.”
+                </p>
+
+                <div class="review-person">
+                  <div class="review-avatar" aria-hidden="true">MP</div>
+
+                  <div>
+                    <strong>Mauro Sergio Passarinho</strong>
+                    <small>Avaliação de cliente • 5 estrelas</small>
+                  </div>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div
+                  class="review-stars"
+                  role="img"
+                  aria-label="5 de 5 estrelas"
+                >
+                  ★★★★★
+                </div>
+
+                <p class="review-quote">
+                  “Lugar agradável com instalações adequadas para os
+                  pets! Equipe dedicada e atenciosa! Super indico☺️”
+                </p>
+
+                <div class="review-person">
+                  <div class="review-avatar" aria-hidden="true">BP</div>
+
+                  <div>
+                    <strong>Bianca Melero Piva</strong>
+                    <small>Avaliação de cliente • 5 estrelas</small>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <button
+            class="reviews-arrow reviews-next"
+            type="button"
+            aria-label="Próximas avaliações"
+          >
+            ›
+          </button>
+
+          <div
+            class="reviews-dots"
+            aria-label="Páginas de avaliações"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVITE AO AGENDAMENTO -->
+    <section class="booking" aria-label="Agende o cuidado do seu pet">
+      <div class="container booking-inner">
+        <div>
+          <h2>O próximo rostinho pode ser o do seu pet.</h2>
+
+          <p>
+            Fale com a gente para escolher o cuidado ideal e
+            combinar um horário.
+          </p>
+        </div>
+
+        <a
+          class="btn btn-azul"
+          href="https://wa.me/5511978128470?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20os%20hor%C3%A1rios%20para%20meu%20pet."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Vamos agendar?
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer" id="contato">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a
+          href="#inicio"
+          aria-label="Pelos &amp; Patas - Voltar ao início"
+        >
+          <img
+            class="footer-logo"
+            src="assets/logo.png"
+            width="320"
+            height="222"
+            alt="Pelos &amp; Patas - Estética Animal"
+          >
+        </a>
+
+        <p>
+          Banho e tosa com manejo gentil, em Osasco.
+          Carinho em cada detalhe.
+        </p>
+      </div>
+
+      <div>
+        <h3>Links rápidos</h3>
+
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="quem-somos.html">Quem Somos?</a></li>
+          <li><a href="blog.html">Blog Pet</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div
+        class="footer-contact-card"
+        aria-label="Informações de contato"
+      >
+        <div class="footer-contact-item">
+          <h3>
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="#icon-map-pin"></use>
+            </svg>
+            Onde estamos
+          </h3>
+
+          <p>
+            Av. Edmundo Amaral, 130<br>
+            Condomínio Nova Era, Hall do Bloco 8<br>
+            Osasco — SP
+          </p>
+        </div>
+
+        <div class="footer-contact-item">
+          <h3>
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="#icon-phone"></use>
+            </svg>
+            Fale conosco
+          </h3>
+
+          <p>
+            <a
+              href="https://wa.me/5511978128470"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              (11) 97812-8470
+            </a>
+          </p>
+        </div>
+
+        <div class="footer-contact-item">
+          <h3>
+            <svg class="icon" aria-hidden="true" focusable="false">
+              <use href="#icon-calendar"></use>
+            </svg>
+            Atendimento
+          </h3>
+
+          <p>Com hora marcada.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Pelos &amp; Patas — Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <script>
+    /* CARROSSEL DE AVALIAÇÕES */
+    (() => {
+      const carousel = document.querySelector(".reviews-carousel");
+
+      if (!carousel) return;
+
+      const track = carousel.querySelector(".reviews-track");
+      const cards = [...track.querySelectorAll(".review-card")];
+      const previous = carousel.querySelector(".reviews-prev");
+      const next = carousel.querySelector(".reviews-next");
+      const dots = carousel.querySelector(".reviews-dots");
+
+      let active = 0;
+      let pages = 0;
+
+      function itemsVisible() {
+        return window.matchMedia("(max-width: 700px)").matches ? 1 : 2;
+      }
+
+      function update() {
+        pages = Math.max(1, cards.length - itemsVisible() + 1);
+
+        const cardOffset = cards[1]
+          ? cards[1].offsetLeft - cards[0].offsetLeft
+          : cards[0].offsetWidth;
+
+        active = Math.max(
+          0,
+          Math.min(
+            pages - 1,
+            Math.round(track.scrollLeft / Math.max(cardOffset, 1))
+          )
+        );
+
+        previous.disabled = active === 0;
+        next.disabled = active === pages - 1;
+
+        if (dots.children.length !== pages) {
+          dots.replaceChildren();
+
+          for (let i = 0; i < pages; i++) {
+            const button = document.createElement("button");
+
+            button.type = "button";
+            button.className = "reviews-dot";
+
+            button.setAttribute(
+              "aria-label",
+              "Mostrar avaliações, página " + (i + 1)
+            );
+
+            button.addEventListener("click", () => go(i));
+            dots.append(button);
+          }
+        }
+
+        [...dots.children].forEach((dot, i) => {
+          dot.setAttribute("aria-current", String(i === active));
+        });
+      }
+
+      function go(index) {
+        const target = Math.max(
+          0,
+          Math.min(cards.length - itemsVisible(), index)
+        );
+
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        track.scrollTo({
+          left: cards[target].offsetLeft - cards[0].offsetLeft,
+          behavior: reducedMotion ? "instant" : "smooth"
+        });
+
+        active = target;
+
+        previous.disabled = active === 0;
+        next.disabled = active === pages - 1;
+
+        [...dots.children].forEach((dot, i) => {
+          dot.setAttribute("aria-current", String(i === active));
+        });
+      }
+
+      previous.addEventListener("click", () => go(active - 1));
+      next.addEventListener("click", () => go(active + 1));
+
+      track.addEventListener("scroll", update, {
+        passive: true
+      });
+
+      window.addEventListener("resize", update);
+
+      update();
+    })();
+
+    /* INDICAÇÃO DA SEÇÃO ATUAL NO MENU */
+    (() => {
+      const links = [
+        ...document.querySelectorAll('.sub-nav a[href^="#"]')
+      ];
+
+      const sections = links
+        .map(link => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      if (!("IntersectionObserver" in window)) return;
+
+      const observer = new IntersectionObserver(
+        entries => {
+          const entry = entries
+            .filter(item => item.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+          if (!entry) return;
+
+          links.forEach(link => {
+            const current =
+              link.getAttribute("href") === "#" + entry.target.id;
+
+            link.classList.toggle("active", current);
+
+            if (current) {
+              link.setAttribute("aria-current", "location");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        },
+        {
+          rootMargin: "-145px 0px -35% 0px",
+          threshold: [0, 0.1, 0.3]
+        }
+      );
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+</body>
+</html>
